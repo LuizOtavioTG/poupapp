@@ -1,0 +1,11 @@
+.icone-moeda {
+    width: 1rem;
+  }
+
+  .botao-adicionar-transacao {
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  
