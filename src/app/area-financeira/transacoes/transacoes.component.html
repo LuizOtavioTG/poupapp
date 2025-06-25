@@ -16,6 +16,7 @@
     </ul>
 
     <app-botao-adicionar-transacao 
-    class="app-botao-adicionar-transacao"/>
+    class="app-botao-adicionar-transacao"
+    (transacaoCriada)="transacaoCriada.emit($event)"/>
   </div>
 </app-card>
