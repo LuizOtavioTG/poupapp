@@ -57,8 +57,7 @@ export class AreaFinanceiraComponent {
       conta: 'Anybank'
     },
   ]);
-
-  contas: Conta[] = [
+  contas = signal<Conta[]>([
     {
       nome: 'Anybank',
       saldo: 1000,
@@ -71,8 +70,13 @@ export class AreaFinanceiraComponent {
       nome: 'Switch Bank',
       saldo: 0,
     },
-  ];
+  ]);
+
   processarTransacao(transacao: Transacao) {
-  this.transacoes.update((transacoes) => [transacao, ...transacoes]);
-}
+    this.transacoes.update((transacoes) => [transacao, ...transacoes]);
+  }
+
+  adicionarConta(conta: Conta) {
+    this.contas.update((contas) => [...contas, conta]);
+  }
 }

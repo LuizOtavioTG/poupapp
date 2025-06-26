@@ -13,8 +13,6 @@ import { KeyValuePipe } from '@angular/common';
 })
 export class BotaoAdicionarTransacaoComponent {
 
- 
-
   modalAberto = signal(false);
 
   novaTransacaoForm = {

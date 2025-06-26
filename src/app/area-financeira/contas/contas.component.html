@@ -6,19 +6,16 @@
   <div card-corpo class="contas-e-botao">
     <ul>
       @for (conta of contas(); track conta.nome) {
-        <li class="item-entre-divisorias">
-          <app-conta [conta]="conta" />
-        </li>
+      <li class="item-entre-divisorias">
+        <app-conta [conta]="conta" />
+      </li>
       } @empty {
-        <li aria-hidden="true">
-          Ainda não há contas criadas.
-        </li>
+      <li aria-hidden="true">
+        Ainda não há contas criadas.
+      </li>
       }
     </ul>
-
-    <app-botao class="botao-adicionar-conta">
-      <img src="icones/carteira.svg" alt="" class="icone-carteira">
-      Adicionar conta
-    </app-botao>
+    <app-botao-adicionar-conta class="app-botao-adicionar-conta" (contaCriada)="contaCriada.emit($event)"/>
   </div>
+
 </app-card>
