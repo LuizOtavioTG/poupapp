@@ -13,7 +13,11 @@ import { Transacao, TipoTransacao } from './compartilhados/transacao.model';
 })
 export class AreaFinanceiraComponent {
 
-  saldo = 30;
+  saldo = computed(() =>{
+    return this.contas().reduce((acc, conta) => {
+       return acc + conta.saldo;
+     }, 0);
+  });
 
   transacoes = signal<Transacao[]>([
 
@@ -49,7 +53,6 @@ export class AreaFinanceiraComponent {
           throw new Error('Tipo de transação não identificado.');
       }
     }, contaInicial.saldo);
-
     return novoSaldo;
   }
 
